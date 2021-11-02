@@ -1,3 +1,5 @@
+#include "lab3.h"
+
 struct position input_port() {
 	struct position port;
 	scanf("%d", &port.lat.degree);
