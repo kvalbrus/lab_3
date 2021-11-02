@@ -10,9 +10,19 @@ int main()
     int danger[50];
 
     scanf("%d", &N);
+    
+    ship  = (struct position *) calloc(N, sizeof(struct position));
 
-    ship  = (struct position *) calloc(N, sizeof(position));
-
+    port = input_port();
     input_ship(N, ship);
+    input_triangle(&triangle);
 
+    matrix_of_slopes(N, ship, triangle, port, slopes);
+    
+    danger_identification(N, slopes, danger);
+    danger_signal(N, danger);
+
+    free(ship);
+
+    return 0;
 }

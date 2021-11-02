@@ -20,7 +20,7 @@ void matrix_of_slopes(int N, struct position * ship, struct fig triangle,
 	lon = triangle.apex1.longitude.degree * 3600 + triangle.apex1.longitude.minute * 60
 		+ triangle.apex1.longitude.second;
 
-	slopes[i][0] = (lat - latShip) / (lon - lonShip);
+	slopes[i][0] = (float) (lat - latShip) / (float) (lon - lonShip);
 
 
 	lat = triangle.apex2.lat.degree * 3600 + triangle.apex2.lat.minute * 60 
@@ -29,7 +29,7 @@ void matrix_of_slopes(int N, struct position * ship, struct fig triangle,
 	lon = triangle.apex2.longitude.degree * 3600 + triangle.apex2.longitude.minute * 60
 		+ triangle.apex2.lat.second;
 
-	slopes[i][1] = (lat - latShip) / (lon - lonShip);
+	slopes[i][1] = (float) (lat - latShip) / (float) (lon - lonShip);
 
         	
 	lat = triangle.apex3.lat.degree * 3600 + triangle.apex3.lat.minute * 60 
@@ -38,7 +38,7 @@ void matrix_of_slopes(int N, struct position * ship, struct fig triangle,
 	lon = triangle.apex3.longitude.degree * 3600 + triangle.apex3.longitude.minute * 60
 		+ triangle.apex3.lat.second;
 
-	slopes[i][2] = (lat - latShip) / (lon - lonShip);
+	slopes[i][2] = (float) (lat - latShip) / (float) (lon - lonShip);
 
 	
 	lat = port.lat.degree * 3600 + port.lat.minute * 60 
@@ -47,6 +47,6 @@ void matrix_of_slopes(int N, struct position * ship, struct fig triangle,
 	lon = port.longitude.degree * 3600 + port.longitude.minute * 60
 		+ port.lat.second;
 
-	slopes[i][3] = (lat - latShip) / (lon - lonShip);
+	slopes[i][3] = (float) (lat - latShip) / (float) (lon - lonShip);
     }
 }

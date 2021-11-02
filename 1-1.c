@@ -16,8 +16,3 @@ void input_ship(int N, struct position *ship) {
 			}
 	}
 }
-
-int main()
-{
-	return 0;
-}
